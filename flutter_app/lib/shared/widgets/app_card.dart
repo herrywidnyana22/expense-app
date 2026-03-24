@@ -1,13 +1,21 @@
-class name extends StatefulWidget {
-  const name({super.key});
+import 'package:flutter/material.dart';
 
-  @override
-  State<name> createState() => _nameState();
-}
+class AppCard extends StatelessWidget {
+  final Widget child;
+  final EdgeInsetsGeometry padding;
 
-class _nameState extends State<name> {
+  const AppCard({
+    super.key,
+    required this.child,
+    this.padding = const EdgeInsets.all(12),
+  });
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      elevation: 3,
+      child: Padding(padding: padding, child: child),
+    );
   }
 }
